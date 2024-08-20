@@ -19,7 +19,9 @@ int _main(struct thread *td) {
   disable_aslr();
 
   initSysUtil();
-
+  
+  char fw_version[6] = {0};
+  get_firmware_string(fw_version);
   printf_notification("Disabled ASLR!");
 
 #ifdef DEBUG_SOCKET
